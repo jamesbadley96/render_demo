@@ -11,6 +11,7 @@ print(df.head())
 
 # Build your components
 app = Dash(__name__, external_stylesheets=[dbc.themes.YETI])
+server = app.server
 mytitle = dcc.Markdown(children='')
 mygraph = dcc.Graph(figure={})
 dropdown = dcc.Dropdown(options=df.columns.values[6:-1],
@@ -50,3 +51,6 @@ def update_graph(column_name):  # function arguments come from the component pro
 # Run app
 if __name__=='__main__':
     app.run_server(debug=True, port=8054)
+    
+    
+  
